@@ -5,7 +5,7 @@
       "scripts": [
         "scripts/cf-user.sh",
         "scripts/x86/cf-cli.sh",
-        "scripts/x86/bosh-cli.sh",
+        "scripts/bosh-cli.sh",
         "scripts/x86/java.sh",
         "scripts/maven.sh",
         "scripts/gradle.sh",
@@ -24,23 +24,23 @@
     {
       "name": "cloudfoundry-client.x86.virtualbox",
       "type": "virtualbox-ovf",
-      "source_path": "output-centos-6.5-desktop.x86.virtualbox/centos-6.5-desktop.x86.virtualbox.ova",
+      "source_path": "output-centos-6.5-desktop.x86.virtualbox/centos-6.5-desktop.x86.ova",
       "ssh_username": "root",
       "ssh_password": "rootdown",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown -h now",
-      "vm_name": "{{.BuildName}}",
+      "vm_name": "cloudfoundry-client.x86",
       "format": "ova"
     },
     {
       "name": "cloudfoundry-client.x86.vmware",
        "type": "vmware-vmx",
-       "source_path": "output-centos-6.5-desktop.x86.vmware/centos-6.5-desktop.x86.vmware.vmx",
+       "source_path": "output-centos-6.5-desktop.x86.vmware/centos-6.5-desktop.x86.vmx",
        "ssh_username": "root",
        "ssh_password": "rootdown",
        "ssh_wait_timeout": "10000s",
        "shutdown_command": "shutdown -h now",
-       "vm_name": "{{.BuildName}}"
+       "vm_name": "cloudfoundry-client.x86"
     }
   ],
   "post-processors": [

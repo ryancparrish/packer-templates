@@ -24,12 +24,12 @@
     {
       "name": "cloudfoundry-client.x86.virtualbox",
       "type": "virtualbox-ovf",
-      "source_path": "output-centos-6.5-desktop.x86.virtualbox/centos-6.5-desktop.x86.ova",
+      "source_path": "output-centos-6.5-desktop.x86.virtualbox/centos-6.5-desktop.x86.virtualbox.ova",
       "ssh_username": "root",
       "ssh_password": "rootdown",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown -h now",
-      "vm_name": "cloudfoundry-client.x86",
+      "vm_name": "cloudfoundry-client.x86.virtualbox",
       "format": "ova"
     },
     {

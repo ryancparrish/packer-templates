@@ -30,7 +30,7 @@
       "ssh_password": "rootdown",
       "ssh_wait_timeout": "10000s",
       "shutdown_command": "shutdown -h now",
-      "vm_name": "centos-6.5-server.x86"
+      "vm_name": "centos-6.5-server.x86.virtualbox"
     },
     {
       "name": "centos-6.5-server.x86.vmware",

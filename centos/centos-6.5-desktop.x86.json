@@ -37,7 +37,7 @@
         ["modifyvm", "{{.Name}}", "--cpus", "2"],
         ["modifyvm", "{{.Name}}", "--vram", "64"]
       ],
-      "vm_name": "centos-6.5-desktop.x86"
+      "vm_name": "centos-6.5-desktop.x86.virtualbox"
     },
     {
       "name": "centos-6.5-desktop.x86.vmware",

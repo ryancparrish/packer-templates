@@ -35,8 +35,9 @@
       "vboxmanage": [
         ["modifyvm", "{{.Name}}", "--memory", "1024"],
         ["modifyvm", "{{.Name}}", "--cpus", "2"],
-        ["modifyvm", "{{.Name}}", "--vram", "64"],
-      ]
+        ["modifyvm", "{{.Name}}", "--vram", "64"]
+      ],
+      "vm_name": "{{.BuildName}}"
     },
     {
       "name": "centos-6.5-desktop.x86.vmware",
@@ -61,7 +62,8 @@
         "memsize": "1024",
         "numvcpus": "2",
         "svga.vramSize": "64000000"
-       }
+      },
+       "vm_name": "{{.BuildName}}"
     }
   ],
   "post-processors": [

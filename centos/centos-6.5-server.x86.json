@@ -1,0 +1,62 @@
+{
+  "provisioners": [
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/vm-tools.sh",
+        "scripts/ruby.sh",
+        "scripts/vagrant.sh",
+        "scripts/cleanup.sh",
+        "scripts/shrink-disk.sh"
+      ]
+    }
+  ],
+  "builders": [
+    {
+      "name": "centos-6.5-server.x86.virtualbox",
+      "type": "virtualbox-iso",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart-minimal.cfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 20000,
+      "guest_os_type": "RedHat",
+      "http_directory": "http",
+      "headless": "true",
+      "iso_checksum": "a4f27ab51d0d2c9d36b68c56b39f752b",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://www.mirrorservice.org/sites/mirror.centos.org/6.5/isos/i386/CentOS-6.5-i386-minimal.iso",
+      "ssh_username": "root",
+      "ssh_password": "rootdown",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown -h now"
+    },
+    {
+      "name": "centos-6.5-server.x86.vmware",
+      "type": "vmware-iso",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kickstart-minimal.cfg<enter><wait>"
+      ],
+      "boot_wait": "10s",
+      "disk_size": 20000,
+      "guest_os_type": "centos",
+      "http_directory": "http",
+      "headless": "true",
+      "iso_checksum": "a4f27ab51d0d2c9d36b68c56b39f752b",
+      "iso_checksum_type": "md5",
+      "iso_url": "http://www.mirrorservice.org/sites/mirror.centos.org/6.5/isos/i386/CentOS-6.5-i386-minimal.iso",
+      "ssh_username": "root",
+      "ssh_password": "rootdown",
+      "ssh_wait_timeout": "10000s",
+      "shutdown_command": "shutdown -h now",
+      "tools_upload_flavor": "linux"
+    }
+  ],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "keep_input_artifact": true,
+      "output": "{{.BuildName}}.box"
+    }
+  ]
+}

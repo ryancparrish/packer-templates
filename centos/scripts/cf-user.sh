@@ -15,3 +15,7 @@ cat <<END > /etc/gdm/custom.conf
 AutomaticLoginEnable=true
 AutomaticLogin=cfuser
 END
+
+# Make sure user home dir (especially Desktop) is owned by cfuser
+mkdir -p /home/cfuser/Desktop
+chown -R cfuser /home/cfuser
